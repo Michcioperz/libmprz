@@ -1,5 +1,4 @@
 #include <string>
-#include <stack>
 #include <cstdio>
 
 namespace mprz {
