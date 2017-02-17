@@ -3,9 +3,7 @@
 #include "libmprz.h"
 
 int main() {
-	unsigned long long x = -1;
-	x >>= 2;
-	long long y = -x;
+	long long y = -150;
 	std::cout << mprz::to_string(y) << std::endl;
 	mprz::ring_a_bell(5);
 	assert(mprz::does_it_ring_a_bell('\a') == true);

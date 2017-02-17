@@ -4,6 +4,48 @@
 
 namespace mprz {
 	template<typename T>
+	class stack {
+		protected:
+			struct element {
+				element *parent;
+				T value;
+			};
+			element *__top = nullptr;
+		public:
+			bool empty() {
+				return __top == nullptr;
+			}
+			size_t count() {
+				size_t ret = 0;
+				element *elem = __top;
+				while (elem != nullptr) {
+					ret++;
+					elem = elem->parent;
+				}
+				return ret;
+			}
+			T top() {
+				if (empty()) {
+					// UNDEFINED BEHAVIOUR
+					// YOU ASKED FOR IT
+					int x = 1 / 0;
+					return x;
+				}
+				return __top->value;
+			}
+			void push(T item) {
+				element *elem = new element();
+				elem->parent = __top;
+				elem->value = item;
+				__top = elem;
+			}
+			void pop() {
+				element *elem = __top;
+				__top = elem->parent;
+				delete elem;
+			}
+	};
+	template<typename T>
 	T abs(T t) {
 		if (t < 0) return -t;
 		return t;
@@ -12,7 +54,7 @@ namespace mprz {
 	std::string to_string(T value) {
 		if (value == 0) return "0";
 		bool sign = value < 0;
-		std::stack<char> digits;
+		stack<char> digits;
 		do {
 			digits.push(abs(value % 10) + 48);
 			value /= 10;
