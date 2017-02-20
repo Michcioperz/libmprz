@@ -10,4 +10,4 @@ add_library(mprz SHARED ${SOURCE_FILES} ${HEADER_FILES})
 set_target_properties(mprz PROPERTIES PUBLIC_HEADER "${HEADER_FILES}")
 install(TARGETS mprz
         LIBRARY DESTINATION lib
-        PUBLIC_HEADER DESTINATION include)
+        PUBLIC_HEADER DESTINATION include/mprz)
