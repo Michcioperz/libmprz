@@ -1,6 +1,6 @@
 # Maintainer: Michał Sidor (Michcioperz) <packager@meekchopp.es>
 pkgname=mprz
-pkgver=0.2.0
+pkgver=0.3.0
 pkgrel=1
 pkgdesc="random library"
 arch=('i686' 'x86_64')

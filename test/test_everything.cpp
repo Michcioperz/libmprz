@@ -2,8 +2,8 @@
 // Created by michcioperz on 20.02.17.
 //
 
-#include <libmprz/math.h>
-#include <libmprz/bell_utils.h>
+#include <mprz/math.h>
+#include <mprz/bell_utils.h>
 #include <gtest/gtest.h>
 
 TEST(MathAbs, Zero) {
